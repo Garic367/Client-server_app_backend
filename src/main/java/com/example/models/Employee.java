@@ -12,7 +12,7 @@ public class Employee extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
-    @Column(name = "name", nullable = false, unique = true, length = 30)
+    @Column(name = "name", nullable = false, unique = true, length = 20)
     public String name;
 
     public String getName() {

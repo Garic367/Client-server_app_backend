@@ -108,7 +108,7 @@ public class EmployeeResource {
         if (employee.name == null) {
             throw new BadRequestException("Employee name can't be null!");
         }
-        if (employee.name.length() > 30 || employee.name.length() < 3) {
+        if (employee.name.length() > 20 || employee.name.length() < 3) {
             throw new BadRequestException("Employee name can't be less 3 symbols or more 30 symbols!");
         }
         if (employee.salary < 100 || employee.salary > 1000) {

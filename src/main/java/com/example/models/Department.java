@@ -13,7 +13,7 @@ public class Department extends PanacheEntityBase {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
 
-    @Column(name = "name", unique = true, nullable = false)
+    @Column(name = "name", unique = true, nullable = false, length = 20)
     public String name;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)

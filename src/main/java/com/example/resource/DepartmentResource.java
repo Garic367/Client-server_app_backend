@@ -91,7 +91,7 @@ public class DepartmentResource {
             if (department.name == null) {
                 throw new BadRequestException("Department name can't be null!");
             }
-            if (department.name.length() > 30 || department.name.length() <= 2) {
+            if (department.name.length() > 30 || department.name.length() < 2 ) {
                 throw new BadRequestException("Department name can't be less 2 symbols or more 30 symbols!");
             }department.persist();
         }
@@ -116,4 +116,10 @@ public class DepartmentResource {
                 entity.delete();
             }
         }
+    @GET
+    @Path("/{id}/has-employees")
+    public Response hasEmployees(@PathParam("id") Long departmentId) {
+        boolean hasEmployees = departmentRepository.hasEmployees(departmentId);
+        return Response.ok(hasEmployees).build();
+    }
 }
